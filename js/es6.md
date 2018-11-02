@@ -38,3 +38,33 @@ const { loading = false, clicked } = props;
 数组以序列号一一对应，这是一个有序的对应关系。
 而对象根据属性名一一对应，这是一个无序的对应关系。
 根据这个特性，使用解析结构从对象中获取属性值更加具有可用性。  
+##函数默认参数
+```javascript
+function add(x = 20, y = 30) {
+    return x + y;
+}
+console.log(add());
+```  
+##展开运算符  
+在ES6中用...来表示展开运算符，它可以将数组方法或者对象进行展开。先来看一个例子它是如何使用的。  
+```javascript
+const arr1 = [1, 2, 3];
+const arr2 = [...arr1, 10, 20, 30];
+
+// 这样，arr2 就变成了[1, 2, 3, 10, 20, 30];
+const obj1 = {
+  a: 1,
+  b: 2,
+  c: 3
+}
+
+const obj2 = {
+  ...obj1,
+  d: 4,
+  e: 5,
+  f: 6
+}
+
+// 结果类似于 const obj2 = Object.assign({}, obj1, {d: 4})
+
+```
