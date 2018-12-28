@@ -74,7 +74,29 @@ function tokenizer(input) {
             continue;
         }
 
+        // 函数名
+        let LETTERS = /[a-z]/i;
+        if (LETTERS.test(char)) {
+            let value = '';
 
+            while (LETTERS.test(char)) {
+                value += char;
+                char = input[++current];
+            }
+
+            tokens.push({
+                type: 'name',
+                value
+            });
+
+            continue;
+        }
+
+        //如果所有的都不适合，我们就抛出错误
+        throw new TypeError('I dont know ehat this character is :' + char);
 
     }
+
+    // 然后返回
+    return tokens;
 }
