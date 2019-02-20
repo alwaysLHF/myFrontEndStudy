@@ -1,0 +1,3 @@
+list.map(
+  l => l = Object.assign(l, {a: 's'})
+)
