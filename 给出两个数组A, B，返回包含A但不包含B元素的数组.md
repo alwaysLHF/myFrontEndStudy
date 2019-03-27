@@ -21,3 +21,38 @@
             return temparray;
         }
     }
+
+
+
+    /**
+     * 给出两个数组A, B，返回包含A但不包含B元素的数组
+     */
+    arrayCutByProp(arr: any, brr: any[], prop) {
+        if (arr.length === 0 || brr.length === 0) {
+            return arr;
+        } else {
+            let array = arr.filter(
+                ele => {
+                    return !this.existInArray(ele[prop], brr, prop);
+                }
+            );
+            return array;
+
+        }
+    }
+
+    existInArray(value, array: any[], prop) {
+        if (array.length === 0) {
+            return;
+        }
+        const temp = array.find(
+            ele => {
+                return ele[prop] === value;
+            }
+        );
+        if (temp !== undefined) {
+            return true;
+        } else {
+            return false;
+        }
+    }
