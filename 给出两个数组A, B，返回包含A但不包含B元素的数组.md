@@ -33,7 +33,7 @@
         } else {
             let array = arr.filter(
                 ele => {
-                    return !this.existInArray(ele[prop], brr, prop);
+                    return !existInArray(ele[prop], brr, prop);
                 }
             );
             return array;
